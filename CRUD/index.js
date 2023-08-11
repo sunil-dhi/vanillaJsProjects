@@ -11,7 +11,13 @@ function showalert(message, className){
 container.insertBefore(div,main);
 setTimeout(() =>  document.querySelector(".alert").remove(), 10000);
 }
+//clear all fields
+function clearfields(){
+document.querySelector('#firstname').value=" ";
+document.querySelector('#lastname').value=" ";
+document.querySelector('#rollno').value=" ";
 
+}
 ///delete
 
 document.querySelector('#student-list').addEventListener('click',(e)=>{
