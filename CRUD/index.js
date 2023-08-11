@@ -9,7 +9,7 @@ function showalert(message, className){
    const container=document.querySelector(".container");
    const main=document.querySelector(".main")
 container.insertBefore(div,main);
-setTimeout(() =>  document.querySelector(".alert").remove(), 10000);
+setTimeout(() =>  document.querySelector(".alert").remove(), 5000);
 }
 //clear all fields
 function clearfields(){
@@ -33,6 +33,23 @@ document.querySelector('#student-form').addEventListener('submit',(e)=>{
 
     if(firstname=="" ||lastname==""||rollno==""){
            showalert("fields can not be empty","danger")
+    }
+    else{
+        if(selectedRow==null){
+              const list=document.querySelector('#student-list');
+              const row=document.createElement('tr')
+              row.innerHTML=`
+              <td>firstname</td>
+              <td>lastname</td>
+              <td>rollno</td>
+              <td>              <a href="#" class="btn btn-warning btn-sm edit">edit</a>
+              <a href="#" class="btn btn-danger btn-sm delete">delete</a>
+</td>
+              `
+              list.appendChild(row);
+              selectedRow=null;
+              showalert("student added successfully","success")
+        }
     }
 
 })
