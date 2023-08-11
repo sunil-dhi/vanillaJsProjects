@@ -39,9 +39,9 @@ document.querySelector('#student-form').addEventListener('submit',(e)=>{
               const list=document.querySelector('#student-list');
               const row=document.createElement('tr')
               row.innerHTML=`
-              <td>firstname</td>
-              <td>lastname</td>
-              <td>rollno</td>
+              <td>${firstname}</td>
+              <td>${lastname}</td>
+              <td>${rollno}</td>
               <td>              <a href="#" class="btn btn-warning btn-sm edit">edit</a>
               <a href="#" class="btn btn-danger btn-sm delete">delete</a>
 </td>
@@ -50,6 +50,15 @@ document.querySelector('#student-form').addEventListener('submit',(e)=>{
               selectedRow=null;
               showalert("student added successfully","success")
         }
+        else{
+            selectedRow.children[0].textContent=firstname;
+            selectedRow.children[0].textContent=lastname;
+            selectedRow.children[0].textContent=rollno;
+            selectedRow=null;
+            showalert("students info edited successfully","success")
+
+        }
+        clearfields()
     }
 
 })
