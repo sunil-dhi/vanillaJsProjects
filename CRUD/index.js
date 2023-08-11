@@ -18,6 +18,25 @@ document.querySelector('#lastname').value=" ";
 document.querySelector('#rollno').value=" ";
 
 }
+
+//add data
+
+document.querySelector('#student-form').addEventListener('submit',(e)=>{
+    e.preventDefault();
+    //get form values
+
+    const firstname=document.querySelector('#firstname').value
+    const lastname=document.querySelector('#lastname').value
+    const rollno=document.querySelector('#rollno').value
+
+    //validate
+
+    if(firstname=="" ||lastname==""||rollno==""){
+           showalert("fields can not be empty","danger")
+    }
+
+})
+
 ///delete
 
 document.querySelector('#student-list').addEventListener('click',(e)=>{
