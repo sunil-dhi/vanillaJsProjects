@@ -52,8 +52,8 @@ document.querySelector('#student-form').addEventListener('submit',(e)=>{
         }
         else{
             selectedRow.children[0].textContent=firstname;
-            selectedRow.children[0].textContent=lastname;
-            selectedRow.children[0].textContent=rollno;
+            selectedRow.children[1].textContent=lastname;
+            selectedRow.children[2].textContent=rollno;
             selectedRow=null;
             showalert("students info edited successfully","success")
 
@@ -61,6 +61,18 @@ document.querySelector('#student-form').addEventListener('submit',(e)=>{
         clearfields()
     }
 
+})
+
+//edit
+
+document.querySelector('#student-list').addEventListener('click',(e)=>{
+    target=e.target;
+    if(target.classList.contains("edit")){
+        selectedRow=target.parentElement.parentElement;
+        document.querySelector('#firstname').value=selectedRow.children[0].textContent
+        document.querySelector('#lastname').value=selectedRow.children[1].textContent;
+        document.querySelector('#rollno').value=selectedRow.children[2].textContent
+    }
 })
 
 ///delete
